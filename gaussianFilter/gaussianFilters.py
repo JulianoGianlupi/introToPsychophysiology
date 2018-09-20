@@ -68,7 +68,7 @@ class gaussianFilters:
     def gaussianHighPass(self):
         self.returnSignal = np.zeros(self.lenght)
         for i, f in enumerate(self.signalFreqs):
-            if f>self.frequency:
+            if abs(f)>self.frequency:
                 self.returnSignal[i] = self.signal[i]
             else:
                 self.returnSignal[i] = self.signal[i]*self.gaussian[i]
@@ -77,7 +77,7 @@ class gaussianFilters:
     def gaussianLowPass(self):
         self.returnSignal = np.zeros(self.lenght)
         for i, f in enumerate(self.signalFreqs):
-            if f<self.frequency:
+            if abs(f)<self.frequency:
                 self.returnSignal[i] = self.signal[i]
             else:
                 self.returnSignal[i] = self.signal[i]*self.gaussian[i]
