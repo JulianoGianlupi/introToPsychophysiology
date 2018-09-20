@@ -1,4 +1,4 @@
-#Gaussian Filters
+# Gaussian Filters
 
 ## TODO 
 
