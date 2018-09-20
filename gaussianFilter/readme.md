@@ -4,6 +4,8 @@
 
 * readme
 
+* harmonics
+
 ## notes
 
 * not yet tested
