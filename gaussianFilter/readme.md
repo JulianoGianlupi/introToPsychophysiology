@@ -10,4 +10,6 @@
 
 * not yet tested
 
-* I haven't implemented methods for negative frequencies
+* I haven't implemented methods for negative frequencies in complex signals
+
+* Methods for complex signals in general
