@@ -6,4 +6,6 @@
 
 ## notes
 
-not yet tested
+* not yet tested
+
+* I haven't implemented methods for negative frequencies
