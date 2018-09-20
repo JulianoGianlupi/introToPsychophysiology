@@ -2,7 +2,7 @@
 
 ## TODO 
 
-readme
+* readme
 
 ## notes
 
