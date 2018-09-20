@@ -47,7 +47,9 @@ class gaussianFilters:
         freq = self.frequency
         var = self.variance
         exponent = - ((x - freq)**2)/(2*var*var)
-        g = np.exp(exponent)/(var*np.sqrt(2*np.pi))
+        negExponent = - ((x + freq)**2)/(2*var*var)
+        g = ( np.exp(exponent)/(var*np.sqrt(2*np.pi)) + 
+             np.exp(negExponent)/(var*np.sqrt(2*np.pi)) )
         return g
         
     
