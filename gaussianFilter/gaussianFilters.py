@@ -39,9 +39,11 @@ class gaussianFilters:
         
         self.variance = variance
         
-        self.gaussian = np.zeros(self.lenght)        
-        for i in range(len(self.gaussian)):
-            self.gaussian[i] = self.gaussianFunc(self.signalFreqs[i])
+        self.gaussian = np.zeros(self.lenght)       
+        
+        self.gaussian[:] = self.gaussianFunc(self.signalFreqs[:])
+        #for i in range(len(self.gaussian)):
+          #  self.gaussian[i] = self.gaussianFunc(self.signalFreqs[i])
         
     def gaussianFunc(self,x):
         freq = self.frequency
