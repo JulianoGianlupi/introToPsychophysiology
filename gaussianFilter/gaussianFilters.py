@@ -39,7 +39,7 @@ class gaussianFilters:
         
         self.variance = variance
         
-        self.gaussian = np.zeros(self.lenght)       
+        self.gaussian = np.zeros(self.lenght,dtype = complex)       
         
         self.gaussian[:] = self.gaussianFunc(self.signalFreqs[:])
         #for i in range(len(self.gaussian)):
@@ -56,8 +56,8 @@ class gaussianFilters:
         
     
     def gaussianBlock(self):
-        self.blockGauss = np.zeros(self.lenght)
-        self.blockedSignal = np.zeros(self.lenght)
+        self.blockGauss = np.zeros(self.lenght,dtype = complex)
+        self.blockedSignal = np.zeros(self.lenght,dtype = complex)
         for i, x in enumerate(self.gaussian):
             self.blockGauss[i] = 1 - x
         self.blockedSignal[:] = self.blockGauss[:]*self.signal[:]
@@ -65,12 +65,12 @@ class gaussianFilters:
         return self.blockedSignal#self.signal[:]
     
     def gaussianPass(self):
-        self.passedSignal = np.zeros(self.lenght)
+        self.passedSignal = np.zeros(self.lenght,dtype = complex)
         self.passedSignal[:] = self.gaussian[:]*self.signal[:]
         return self.passedSignal
     
     def gaussianHighPass(self):
-        self.returnSignal = np.zeros(self.lenght)
+        self.returnSignal = np.zeros(self.lenght,dtype = complex)
         for i, f in enumerate(self.signalFreqs):
             if abs(f)>self.frequency:
                 self.returnSignal[i] = self.signal[i]
@@ -79,7 +79,7 @@ class gaussianFilters:
         return self.returnSignal
     
     def gaussianLowPass(self):
-        self.returnSignal = np.zeros(self.lenght)
+        self.returnSignal = np.zeros(self.lenght,dtype = complex)
         for i, f in enumerate(self.signalFreqs):
             if abs(f)<self.frequency:
                 self.returnSignal[i] = self.signal[i]
