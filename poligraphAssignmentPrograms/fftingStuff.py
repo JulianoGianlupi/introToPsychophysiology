@@ -23,9 +23,9 @@ def getDataButFirstLine(fileName):
 
 samplingRate = 10**-3
 
-direc = 'subjectG/'
+direc = 'subjectA/'
 
-fileName = direc + 'subjectG.csv'
+fileName = direc + 'subjectA.csv'
 
 
 timeFile = direc+'time.csv'
